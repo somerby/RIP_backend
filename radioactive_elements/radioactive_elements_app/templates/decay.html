@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Распад {% endblock %}
+
+{% block container %}
+<div class="decayPassTime">
+    <p class = "georgiaP">Прошло времени: </p>
+    <input type="text" class="decayInput" name="decay_elements_pass_time" value="{{pass_time}}">
+</div>
+<div class = "decayElementsContainer">
+    {% for element in elements %}
+    <div class = "decayCard card">
+        <img src="{{element.img}}" alt = "decayCardLogo" class = "decayCardLogo">
+        <div class = "decayCardContent">
+            <h2 class = "oswaldH">{{element.name}}</h2>
+            <div class = "decayCardInput">
+                <p class = "georgiaP">Количество вещества: </p>
+                <input type="text" class="decayInput" name="decay_element_mass_input" value="{{element.quantity}}">
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

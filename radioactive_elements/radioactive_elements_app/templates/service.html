@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{element.name}}{% endblock %}
+
+{% block container %}
+<div class = "aboutHead">
+    <img src="{{element.img}}" alt = "elementLogo" class = "aboutHeadLogo">
+    <div class = "aboutHeadContent">
+        <h2 class = "oswaldH">{{element.name}}</h2>
+        <p class = "georgiaP">{{element.period|safe}}</p>
+    </div>
+</div>
+<div class = "aboutContent">
+    <p class = "georgiaP">{{element.descr|safe}}</p>
+</div>
+{% endblock %}
